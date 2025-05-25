@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Clomb</title>
+</head>
+
+<body>
+
+    <h1>Gyms Page</h1>
+
+    <p>Get Gyms</p>
+
+    <button id="fetch-gyms">Get All Gyms</button>
+    <ul id="get-objects-list"></ul>
+
+    <p>Create Gym</p>
+
+    <form id="gym-creation-form">
+        <input type="text" placeholder="Gym Name" id="gym-name">
+        <input type="text" placeholder="Gym Address" id="gym-address">
+        
+        <button type="submit">Create Gym</button>
+
+    </form>
+
+    <p>Update Gym</p>
+
+    <form id="gym-update-form">
+        <input type="text" placeholder="Gym ID" id="update-gym-id">
+        <input type="text" placeholder="Gym Name" id="update-gym-name">
+        <input type="text" placeholder="Gym Address" id="update-gym-address">
+        
+        <button type="submit">Update Gym</button>
+
+    </form>
+
+    <p>Delete Gym</p>
+
+    <form id="gym-delete-form">
+        <input type="text" placeholder="Gym ID" id="delete-gym-id">
+        <button type="submit">Delete Gym</button>
+    </form>
+
+
+    <h3 id="output-message"> </h3>
+
+    <script type="text/javascript" src="../scripts/gyms-script.js"></script>
+
+</body>

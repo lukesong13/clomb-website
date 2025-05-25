@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Clomb</title>
+</head>
+
+<body>
+
+    <h1>Climb Details Page</h1>
+
+    <p>Get Climb Details</p>
+
+    <form id="fetch-climb-details">
+        
+        <button type="submit">Get Climb Details</button>
+        <ul id="get-objects-list"></ul>
+
+    </form>
+
+    <p>Create Climb Details</p>
+
+    <form id="climbDetails-creation-form">
+        <input type="text" placeholder="User ID" id="climbDetails-userId">
+        <input type="text" placeholder="Route ID" id="climbDetails-routeId">
+        <input type="text" placeholder="Gym ID" id="climbDetails-gymId">
+        <input type="text" placeholder="Notes" id="climbDetails-notes">
+
+        <button type="submit">Create Climb Details</button>
+
+    </form>
+    
+    <p>Update Climb Details</p>
+
+    <form id="climbDetails-update-form">
+        <input type="text" placeholder="Climb Detail ID" id="update-climbDetails-id">
+        <input type="text" placeholder="Route ID" id="update-climbDetails-routeId">
+        <input type="text" placeholder="Gym ID" id="update-climbDetails-gymId">
+        <input type="text" placeholder="Notes" id="update-climbDetails-notes">
+
+        <button type="submit">Update Climb Details</button>
+
+    </form>
+
+    <p>Delete Climb Details</p>
+
+    <form id="climb-details-delete-form">
+        <input type="text" placeholder="Climb Detail ID" id="delete-climb-detail-id">
+        <button type="submit">Delete Climb Detail</button>
+    </form>
+
+
+    <h3 id="output-message"> </h3>
+
+    <script type="text/javascript" src="../scripts/climbdetails-script.js"></script>
+
+</body>
