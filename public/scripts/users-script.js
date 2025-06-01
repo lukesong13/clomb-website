@@ -14,60 +14,111 @@ document.getElementById('fetch-users').addEventListener('click', async () => {
         // Get the user list container
         const getObjectsList = document.getElementById('get-objects-list');
         getObjectsList.innerHTML = ''; // Clear previous entries
+        const tableBody = document.getElementById('users-table-body');
 
         users.forEach(user => {
-            const li = document.createElement('li');
-            const ul = document.createElement('ul');
+            const row = document.createElement('tr');
+          	
+            //TABLE START
 
-            li.textContent = `User ID: ${user.id}`;
+            const idTd = document.createElement('td');
+                idTd.textContent = user.id;
+        
+            const firstNameTd = document.createElement('td');
+            firstNameTd.textContent = user.firstName;
 
+            const lastNameTd = document.createElement('td');
+            lastNameTd.textContent = user.lastName;
 
-            const firstNameLi = document.createElement('li');
-            firstNameLi.textContent = `First Name: ${user.firstName}`;
+            const emailTd = document.createElement('td');
+            emailTd.textContent = user.email;
 
-            const lastNameLi = document.createElement('li');
-            lastNameLi.textContent = `Last Name: ${user.lastName}`;
+            const genderTd = document.createElement('td');
+            genderTd.textContent = user.gender;
 
-            const emailLi = document.createElement('li');
-            emailLi.textContent = `Email: ${user.email}`;
+            const usernameTd = document.createElement('td');
+            usernameTd.textContent = user.username;
 
-            // add consts for: gender, username, password, chalk, shoes, createDate, and updateDate
+            const chalkTd = document.createElement('td');
+            chalkTd.textContent = user.chalk;
 
-            const genderLi = document.createElement('li');
-            genderLi.textContent = `Gender: ${user.gender}`;
+            const shoesTd = document.createElement('td');
+            shoesTd.textContent = user.shoes;
 
-            const usernameLi = document.createElement('li');
-            usernameLi.textContent = `Username: ${user.username}`;
+            const createDateTd = document.createElement('td');
+            createDateTd.textContent = user.userCreateDate;
 
-            const chalkLi = document.createElement('li');
-            chalkLi.textContent = `Chalk: ${user.chalk}`;
-
-            const shoesLi = document.createElement('li');
-            shoesLi.textContent = `Shoes: ${user.shoes}`;
-
-            const userCreateDateLi = document.createElement('li');
-            userCreateDateLi.textContent = `Creation Date: ${user.userCreateDate}`;
-
-            const userUpdateDateLi = document.createElement('li');
-            userUpdateDateLi.textContent = `Update Date: ${user.userUpdateDate}`;
-
+            const updateDateTd = document.createElement('td');
+            updateDateTd.textContent = user.userUpdateDate;
 
 
-            ul.appendChild(firstNameLi);
-            ul.appendChild(lastNameLi);
-            ul.appendChild(emailLi);
-            ul.appendChild(genderLi);
-            ul.appendChild(usernameLi);
-            ul.appendChild(chalkLi);
-            ul.appendChild(shoesLi);
-            ul.appendChild(userCreateDateLi);
-            ul.appendChild(userUpdateDateLi);
+            row.appendChild(idTd);
+            row.appendChild(firstNameTd);
+            row.appendChild(lastNameTd);
+            row.appendChild(emailTd);
+            row.appendChild(genderTd);
+            row.appendChild(usernameTd);
+            row.appendChild(chalkTd);
+            row.appendChild(shoesTd);
+            row.appendChild(createDateTd);
+            row.appendChild(updateDateTd);
+
+          	tableBody.appendChild(row);
+
+            //TABLE END
+
+            // const li = document.createElement('li');
+            // const ul = document.createElement('ul');
+
+            // li.textContent = `User ID: ${user.id}`;
 
 
-            li.appendChild(ul);
+            // const firstNameLi = document.createElement('li');
+            // firstNameLi.textContent = `First Name: ${user.firstName}`;
+
+            // const lastNameLi = document.createElement('li');
+            // lastNameLi.textContent = `Last Name: ${user.lastName}`;
+
+            // const emailLi = document.createElement('li');
+            // emailLi.textContent = `Email: ${user.email}`;
+
+            // // add consts for: gender, username, password, chalk, shoes, createDate, and updateDate
+
+            // const genderLi = document.createElement('li');
+            // genderLi.textContent = `Gender: ${user.gender}`;
+
+            // const usernameLi = document.createElement('li');
+            // usernameLi.textContent = `Username: ${user.username}`;
+
+            // const chalkLi = document.createElement('li');
+            // chalkLi.textContent = `Chalk: ${user.chalk}`;
+
+            // const shoesLi = document.createElement('li');
+            // shoesLi.textContent = `Shoes: ${user.shoes}`;
+
+            // const userCreateDateLi = document.createElement('li');
+            // userCreateDateLi.textContent = `Creation Date: ${user.userCreateDate}`;
+
+            // const userUpdateDateLi = document.createElement('li');
+            // userUpdateDateLi.textContent = `Update Date: ${user.userUpdateDate}`;
+
+
+
+            // ul.appendChild(firstNameLi);
+            // ul.appendChild(lastNameLi);
+            // ul.appendChild(emailLi);
+            // ul.appendChild(genderLi);
+            // ul.appendChild(usernameLi);
+            // ul.appendChild(chalkLi);
+            // ul.appendChild(shoesLi);
+            // ul.appendChild(userCreateDateLi);
+            // ul.appendChild(userUpdateDateLi);
+
+
+            // li.appendChild(ul);
 
        
-            getObjectsList.appendChild(li);
+            // getObjectsList.appendChild(li);
 
             
         });
