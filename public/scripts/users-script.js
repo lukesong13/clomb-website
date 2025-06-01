@@ -14,12 +14,14 @@ document.getElementById('fetch-users').addEventListener('click', async () => {
         // Get the user list container
         const getObjectsList = document.getElementById('get-objects-list');
         getObjectsList.innerHTML = ''; // Clear previous entries
+
+        //TABLE START
         const tableBody = document.getElementById('users-table-body');
 
         users.forEach(user => {
             const row = document.createElement('tr');
           	
-            //TABLE START
+          
 
             const idTd = document.createElement('td');
                 idTd.textContent = user.id;

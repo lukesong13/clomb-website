@@ -15,36 +15,72 @@ document.getElementById('fetch-gyms').addEventListener('click', async () => {
         const getObjectsList = document.getElementById('get-objects-list');
         getObjectsList.innerHTML = ''; // Clear previous entries
 
-        gyms.forEach(gym => {
-            const li = document.createElement('li');
-            const ul = document.createElement('ul');
+//TABLE START
+const tableBody = document.getElementById('gyms-table-body');
 
-            li.textContent = `Gym ID: ${gym.id}`;
+gyms.forEach(gym => {
+    const row = document.createElement('tr');
+      
+  
 
-            const gymNameLi = document.createElement('li');
-            gymNameLi.textContent = `Gym Name: ${gym.gymName}`;
+    const idTd = document.createElement('td');
+        idTd.textContent = gym.id;
 
-            const gymAddressLi = document.createElement('li');
-            gymAddressLi.textContent = `Gym Address: ${gym.gymAddress}`;
+    const gymNameTd = document.createElement('td');
+    gymNameTd.textContent = gym.gymName;
 
-            const gymCreateDateLi = document.createElement('li');
-            gymCreateDateLi.textContent = `Creation Date: ${gym.gymCreateDate}`;
+    const gymAddressTd = document.createElement('td');
+    gymAddressTd.textContent = gym.gymAddress;
 
-            const gymUpdateDateLi = document.createElement('li');
-            gymUpdateDateLi.textContent = `Update Date: ${gym.gymUpdateDate}`;
+    const createDateTd = document.createElement('td');
+    createDateTd.textContent = gym.gymCreateDate;
 
-
-
-            ul.appendChild(gymNameLi);
-            ul.appendChild(gymAddressLi);
-            ul.appendChild(gymCreateDateLi);
-            ul.appendChild(gymUpdateDateLi);
+    const updateDateTd = document.createElement('td');
+    updateDateTd.textContent = gym.gymUpdateDate;
 
 
-            li.appendChild(ul);
+    row.appendChild(idTd);
+    row.appendChild(gymNameTd);
+    row.appendChild(gymAddressTd);
+    row.appendChild(createDateTd);
+    row.appendChild(updateDateTd);
+
+      tableBody.appendChild(row);
+
+    //TABLE END
+
+
+
+        // gyms.forEach(gym => {
+        //     const li = document.createElement('li');
+        //     const ul = document.createElement('ul');
+
+        //     li.textContent = `Gym ID: ${gym.id}`;
+
+        //     const gymNameLi = document.createElement('li');
+        //     gymNameLi.textContent = `Gym Name: ${gym.gymName}`;
+
+        //     const gymAddressLi = document.createElement('li');
+        //     gymAddressLi.textContent = `Gym Address: ${gym.gymAddress}`;
+
+        //     const gymCreateDateLi = document.createElement('li');
+        //     gymCreateDateLi.textContent = `Creation Date: ${gym.gymCreateDate}`;
+
+        //     const gymUpdateDateLi = document.createElement('li');
+        //     gymUpdateDateLi.textContent = `Update Date: ${gym.gymUpdateDate}`;
+
+
+
+        //     ul.appendChild(gymNameLi);
+        //     ul.appendChild(gymAddressLi);
+        //     ul.appendChild(gymCreateDateLi);
+        //     ul.appendChild(gymUpdateDateLi);
+
+
+        //     li.appendChild(ul);
 
        
-            getObjectsList.appendChild(li);
+        //     getObjectsList.appendChild(li);
 
             
         });

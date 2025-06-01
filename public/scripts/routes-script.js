@@ -19,44 +19,86 @@ document.getElementById('fetch-routes').addEventListener('submit', async (event)
         const getObjectsList = document.getElementById('get-objects-list');
         getObjectsList.innerHTML = ''; // Clear previous entries
 
-        routes.forEach(route => {
-            const li = document.createElement('li');
-            const ul = document.createElement('ul');
+        //TABLE START
+const tableBody = document.getElementById('routes-table-body');
 
-            li.textContent = `Route ID: ${route.id}`;
+routes.forEach(route => {
+    const row = document.createElement('tr');
+      
+  
 
-            const routeGradeLi = document.createElement('li');
-            routeGradeLi.textContent = `Route Grade: ${route.grade}`;
+    const idTd = document.createElement('td');
+        idTd.textContent = route.id;
 
-            const routeSetterLi = document.createElement('li');
-            routeSetterLi.textContent = `Route Setter: ${route.setter}`;
+    const routeGradeTd = document.createElement('td');
+    routeGradeTd.textContent = route.grade;
 
-            const routeColorLi = document.createElement('li');
-            routeColorLi.textContent = `Route Color: ${route.color}`;
+    const routeSetterTd = document.createElement('td');
+    routeSetterTd.textContent = route.setter;
 
-            const gymIdLi = document.createElement('li');
-            gymIdLi.textContent = `Gym ID: ${route.gymId}`;
+    const routeColorTd = document.createElement('td');
+    routeColorTd.textContent = route.color;
 
-            const routeCreateDateLi = document.createElement('li');
-            routeCreateDateLi.textContent = `Creation Date: ${route.routeCreateDate}`;
+    const gymIdTd = document.createElement('td');
+    gymIdTd.textContent = route.gymId;
 
-            const routeUpdateDateLi = document.createElement('li');
-            routeUpdateDateLi.textContent = `Update Date: ${route.routeUpdateDate}`;
+    const createDateTd = document.createElement('td');
+    createDateTd.textContent = route.routeCreateDate;
 
-
-
-            ul.appendChild(routeGradeLi);
-            ul.appendChild(routeSetterLi);
-            ul.appendChild(routeColorLi);
-            ul.appendChild(gymIdLi);
-            ul.appendChild(routeCreateDateLi);
-            ul.appendChild(routeUpdateDateLi);
+    const updateDateTd = document.createElement('td');
+    updateDateTd.textContent = route.routeUpdateDate;
 
 
-            li.appendChild(ul);
+    row.appendChild(idTd);
+    row.appendChild(routeGradeTd);
+    row.appendChild(routeSetterTd);
+    row.appendChild(routeColorTd);
+    row.appendChild(gymIdTd);
+    row.appendChild(createDateTd);
+    row.appendChild(updateDateTd);
+
+      tableBody.appendChild(row);
+
+    //TABLE END
+
+        // routes.forEach(route => {
+        //     const li = document.createElement('li');
+        //     const ul = document.createElement('ul');
+
+        //     li.textContent = `Route ID: ${route.id}`;
+
+        //     const routeGradeLi = document.createElement('li');
+        //     routeGradeLi.textContent = `Route Grade: ${route.grade}`;
+
+        //     const routeSetterLi = document.createElement('li');
+        //     routeSetterLi.textContent = `Route Setter: ${route.setter}`;
+
+        //     const routeColorLi = document.createElement('li');
+        //     routeColorLi.textContent = `Route Color: ${route.color}`;
+
+        //     const gymIdLi = document.createElement('li');
+        //     gymIdLi.textContent = `Gym ID: ${route.gymId}`;
+
+        //     const routeCreateDateLi = document.createElement('li');
+        //     routeCreateDateLi.textContent = `Creation Date: ${route.routeCreateDate}`;
+
+        //     const routeUpdateDateLi = document.createElement('li');
+        //     routeUpdateDateLi.textContent = `Update Date: ${route.routeUpdateDate}`;
+
+
+
+        //     ul.appendChild(routeGradeLi);
+        //     ul.appendChild(routeSetterLi);
+        //     ul.appendChild(routeColorLi);
+        //     ul.appendChild(gymIdLi);
+        //     ul.appendChild(routeCreateDateLi);
+        //     ul.appendChild(routeUpdateDateLi);
+
+
+        //     li.appendChild(ul);
 
        
-            getObjectsList.appendChild(li);
+        //     getObjectsList.appendChild(li);
 
             
         });
