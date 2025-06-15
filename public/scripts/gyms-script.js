@@ -18,6 +18,8 @@ document.getElementById('fetch-gyms').addEventListener('click', async () => {
 //TABLE START
 const tableBody = document.getElementById('gyms-table-body');
 
+tableBody.innerHTML="";
+
 gyms.forEach(gym => {
     const row = document.createElement('tr');
       
@@ -46,6 +48,8 @@ gyms.forEach(gym => {
     row.appendChild(updateDateTd);
 
       tableBody.appendChild(row);
+
+      document.getElementById('users-table').style.display = 'table';
 
     //TABLE END
 
