@@ -36,8 +36,8 @@
     <p>Get Users</p>
 
     <button id="fetch-users">Get All Users</button>
-    
-    <table id="users-table">
+
+    <table id="users-table" style="display: none; border: 1px solid black;">
         <thead>
           <tr>
             <th>User ID</th>
@@ -61,35 +61,50 @@
 
     <p>Create User</p>
 
-    <form id="user-creation-form">
-        <input type="text" placeholder="First Name" id="first-name">
-        <input type="text" placeholder="Last Name" id="last-name">
-        <input type="text" placeholder="Email" id="email">
+<!-- Trigger for opening the modal -->
+<button id="open-create-user-modal">Add New User</button>
+
+    <!-- Modal Overlay -->
+<div id="create-user-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-create-user-modal">&times;</span>
+      <form id="user-creation-form">
+        <input type="text" placeholder="First Name" id="first-name" required>
+        <input type="text" placeholder="Last Name" id="last-name" required>
+        <input type="text" placeholder="Email" id="email" required>
         <input type="text" placeholder="Shoes" id="shoes">
         <input type="text" placeholder="Chalk" id="chalk">
         <input type="text" placeholder="Gender" id="gender">
-        <input type="text" placeholder="Username" id="username">
-        <input type="text" placeholder="Password" id="password">
+        <input type="text" placeholder="Username" id="username" required>
+        <input type="password" placeholder="Password" id="password" required>
         <button type="submit">Create User</button>
-
-    </form>
-
-    
-
+      </form>
+    </div>
+  </div>
+  
     <p>Update User</p>
 
-    <form id="user-update-form">
-        <input type="text" placeholder="User ID" id="update-user-id">
-        <input type="text" placeholder="First Name" id="update-first-name">
-        <input type="text" placeholder="Last Name" id="update-last-name">
-        <input type="text" placeholder="Email" id="update-email">
-        <input type="text" placeholder="Shoes" id="update-shoes">
-        <input type="text" placeholder="Chalk" id="update-chalk">
-        <input type="text" placeholder="Gender" id="update-gender">
-        <input type="text" placeholder="Username" id="update-username">
-        <input type="text" placeholder="Password" id="update-password">
-        <button type="submit">Update User</button>
-    </form>
+    <!-- Trigger for opening the modal -->
+<button id="open-update-user-modal">Update User</button>
+
+    <!-- Modal Overlay -->
+<div id="update-user-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="close-update-user-modal">&times;</span>
+        <form id="user-update-form">
+            <input type="text" placeholder="User ID" id="update-user-id">
+            <input type="text" placeholder="First Name" id="update-first-name">
+            <input type="text" placeholder="Last Name" id="update-last-name">
+            <input type="text" placeholder="Email" id="update-email">
+            <input type="text" placeholder="Shoes" id="update-shoes">
+            <input type="text" placeholder="Chalk" id="update-chalk">
+            <input type="text" placeholder="Gender" id="update-gender">
+            <input type="text" placeholder="Username" id="update-username">
+            <input type="password" placeholder="Password" id="update-password">
+            <button type="submit">Update User</button>
+        </form>
+    </div>
+</div>
 
     <p>Delete User</p>
 

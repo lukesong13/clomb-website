@@ -4,7 +4,7 @@ document.getElementById('fetch-climb-details').addEventListener('submit', async 
     
     event.preventDefault();
     try {
-        let userId = document.getElementById('get-climb-details-user-id').value;
+        let userId = document.getElementById('getClimbDetails-userId').value;
 
         const response = await fetch('http://clombv4-env.eba-k6padzhd.us-west-2.elasticbeanstalk.com/api/climbDetails/user/'+userId);
 

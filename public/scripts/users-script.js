@@ -18,6 +18,8 @@ document.getElementById('fetch-users').addEventListener('click', async () => {
         //TABLE START
         const tableBody = document.getElementById('users-table-body');
 
+        tableBody.innerHTML="";
+
         users.forEach(user => {
             const row = document.createElement('tr');
           	
@@ -66,6 +68,8 @@ document.getElementById('fetch-users').addEventListener('click', async () => {
             row.appendChild(updateDateTd);
 
           	tableBody.appendChild(row);
+
+            document.getElementById('users-table').style.display = 'table';
 
             //TABLE END
 
@@ -135,6 +139,28 @@ document.getElementById('fetch-users').addEventListener('click', async () => {
 
 //CREATE
 
+const openCreateUserModalBtn = document.getElementById('open-create-user-modal');
+const closeCreateUserModalBtn = document.getElementById('close-create-user-modal');
+const createUserModal = document.getElementById('create-user-modal');
+
+// Open modal
+openCreateUserModalBtn.addEventListener('click', () => {
+    createUserModal.style.display = 'block';
+  });
+  
+  // Close modal
+  closeCreateUserModalBtn.addEventListener('click', () => {
+    createUserModal.style.display = 'none';
+  });
+
+
+  // Close modal if user clicks outside the form content
+window.addEventListener('click', (e) => {
+    if (e.target === createUserModal) {
+      createUserModal.style.display = 'none';
+    }
+  });
+
 const userCreationForm = document.getElementById('user-creation-form');
 
 userCreationForm.addEventListener('submit', async (event) => {
@@ -183,6 +209,7 @@ userCreationForm.addEventListener('submit', async (event) => {
 
       // Optional: Clear form fields after successful submission
       event.target.reset();
+      createUserModal.style.display = 'none';
   } catch (error) {
       console.error('Error:', error.message);
       document.getElementById('output-message').textContent = "Error submitting form. Try again.";
@@ -192,6 +219,28 @@ userCreationForm.addEventListener('submit', async (event) => {
 });
 
 //UPDATE
+
+const openUpdateUserModalBtn = document.getElementById('open-update-user-modal');
+const closeUpdateUserModalBtn = document.getElementById('close-update-user-modal');
+const updateUserModal = document.getElementById('update-user-modal');
+
+// Open modal
+openUpdateUserModalBtn.addEventListener('click', () => {
+    updateUserModal.style.display = 'block';
+  });
+  
+  // Close modal
+  closeUpdateUserModalBtn.addEventListener('click', () => {
+    updateUserModal.style.display = 'none';
+  });
+
+
+  // Close modal if user clicks outside the form content
+window.addEventListener('click', (e) => {
+    if (e.target === updateUserModal) {
+      updateUserModal.style.display = 'none';
+    }
+  });
 
 let userUpdateForm = document.getElementById('user-update-form');
 
@@ -242,6 +291,7 @@ userUpdateForm.addEventListener('submit', async (event) => {
 
       // Optional: Clear form fields after successful submission
       event.target.reset();
+      updateUserModal.style.display = 'none';
   } catch (error) {
       console.error('Error:', error.message);
       document.getElementById('output-message').textContent = "Error submitting form. Try again.";
